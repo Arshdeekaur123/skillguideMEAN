@@ -66,8 +66,7 @@
   <input id="level" class="form-control mb-2" placeholder="Level">
   <input id="category" class="form-control mb-3" placeholder="Category">
 
-  <button type="button" class="btn btn-success w-100 mb-3" onclick="addSkill()">Add Skill</button>
-
+<button id="addBtn" type="button" class="btn btn-success w-100 mb-3" onclick="addSkill()">Add Skill</button>
   <div id="skills" class="mb-3"></div>
 
   <div class="d-flex justify-content-between">
@@ -97,42 +96,34 @@
 </div>
 
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
 let currentStep = 0;
+let editId = null;
 const steps = document.querySelectorAll(".step");
+const API = "http://localhost:5000/api/skills";
 
 function showStep(index) {
   steps.forEach((step, i) => {
     step.classList.add("d-none");
-    if (i === index) step.classList.remove("d-none");
+    if (i === index) {
+      step.classList.remove("d-none");
+    }
   });
 }
 
 function nextStep() {
-  currentStep++;
-  showStep(currentStep);
+  if (currentStep < steps.length - 1) {
+    currentStep++;
+    showStep(currentStep);
+  }
 }
 
 function prevStep() {
-  currentStep--;
-  showStep(currentStep);
+  if (currentStep > 0) {
+    currentStep--;
+    showStep(currentStep);
+  }
 }
-
-document.querySelector("form").addEventListener("submit", function(e){
-  e.preventDefault(); // stop default reload
-
-  document.querySelector(".card").style.display = "none";
-  document.getElementById("spinner").style.display = "block";
-
-  setTimeout(() => {
-    window.location.href = "/dashboard";
-  }, 2000);
-});
-
-
-const API = "http://localhost:5000/api/skills";
 
 async function addSkill() {
   const skill = {
@@ -141,11 +132,26 @@ async function addSkill() {
     category: document.getElementById('category').value
   };
 
-  await fetch(API, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(skill)
-  });
+  if (editId) {
+    await fetch(API + "/" + editId, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(skill)
+    });
+
+    editId = null;
+    document.getElementById("addBtn").innerText = "Add Skill";
+  } else {
+    await fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(skill)
+    });
+  }
+
+  document.getElementById('name').value = "";
+  document.getElementById('level').value = "";
+  document.getElementById('category').value = "";
 
   loadSkills();
 }
@@ -155,11 +161,15 @@ async function loadSkills() {
   const data = await res.json();
 
   document.getElementById('skills').innerHTML = data.map(skill => `
-    <div class="badge bg-info text-dark m-1 p-2">
-     ${skill.name} (${skill.level})
-<button onclick="editSkill('${skill._id}', '${skill.name}', '${skill.level}', '${skill.category}')" class="btn btn-sm btn-warning ms-2">✏️</button>
-<button onclick="deleteSkill('${skill._id}')" class="btn btn-sm btn-danger ms-1">❌</button> 
-</div>
+    <div class="badge bg-info text-dark m-1 p-2 fs-6">
+      ${skill.name} (${skill.level})
+
+      <button onclick="editSkill('${skill._id}','${skill.name}','${skill.level}','${skill.category}')" 
+      class="btn btn-sm btn-warning ms-2">✏️</button>
+
+      <button onclick="deleteSkill('${skill._id}')" 
+      class="btn btn-sm btn-danger ms-1">❌</button>
+    </div>
   `).join('');
 }
 
@@ -167,17 +177,34 @@ async function deleteSkill(id) {
   await fetch(API + "/" + id, { method: 'DELETE' });
   loadSkills();
 }
+
 function editSkill(id, name, level, category) {
-    document.getElementById('name').value = name;
-    document.getElementById('level').value = level;
-    document.getElementById('category').value = category;
+  document.getElementById('name').value = name;
+  document.getElementById('level').value = level;
+  document.getElementById('category').value = category;
 
-    editId = id;
-
-    document.querySelector("button[onclick='addSkill()']").innerText = "Update Skill";
+  editId = id;
+  document.getElementById("addBtn").innerText = "Update Skill";
 }
 
-// load existing skills
+document.querySelector("form").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  let skillsText = "";
+
+  const res = await fetch(API);
+  const dataSkills = await res.json();
+
+  dataSkills.forEach(s => {
+    skillsText += s.name + " ";
+  });
+
+  localStorage.setItem("skillsText", skillsText);
+
+  window.location.href = "/loading";
+});
+
+showStep(0);
 loadSkills();
 </script>
 

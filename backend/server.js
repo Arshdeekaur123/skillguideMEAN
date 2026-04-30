@@ -31,6 +31,54 @@ app.post('/api/skills', async (req, res) => {
     }
 });
 
+// ML Prediction API
+const { spawn } = require('child_process');
+
+app.post('/predict', (req, res) => {
+    const text = req.body.text || "";
+    const scriptPath = path.join(__dirname, 'model_runner.py');
+
+    const py = spawn('python', [scriptPath, text]);
+
+    let output = "";
+    let errOutput = "";
+
+    py.stdout.on('data', (data) => {
+        output += data.toString();
+    });
+
+    py.stderr.on('data', (data) => {
+        errOutput += data.toString();
+    });
+
+    py.on('close', (code) => {
+        if (code !== 0) {
+            console.log("PYTHON ERROR:", errOutput);
+            return res.json({ result: [] });
+        }
+
+        try {
+            const result = JSON.parse(output);
+            console.log(result); // debug
+            res.json({ result: result });
+        } catch (err) {
+            console.log("JSON ERROR:", err);
+            console.log(output);
+            res.json({ result: [] });
+        }
+    });
+});
+
+app.get('/loading', (req, res) => {
+    res.sendFile(path.join(__dirname, '../loading.html'));
+});
+    
+
+app.get('/result', (req, res) => {
+    res.sendFile(path.join(__dirname, '../result.html'));
+});
+
+
 app.get('/api/skills', async (req, res) => {
     const skills = await Skill.find();
     res.json(skills);
