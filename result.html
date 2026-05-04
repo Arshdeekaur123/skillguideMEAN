@@ -1,60 +1,168 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-  <title>🚀 Job Recommendations</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Career Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            font-family:Arial, sans-serif;
+            background:linear-gradient(135deg,#020617,#0f172a,#111827);
+            color:white;
+        }
+        .main-title{
+            text-align:center;
+            padding:40px 20px 10px;
+            color:#facc15;
+            font-size:40px;
+            font-weight:bold;
+            text-shadow:0 0 20px rgba(250,204,21,0.4);
+        }
+        .sub-title{
+            text-align:center;
+            color:#94a3b8;
+            margin-bottom:40px;
+            font-size:18px;
+        }
+        .result-card{
+            background:rgba(15,23,42,0.85);
+            border:1px solid rgba(250,204,21,0.2);
+            border-radius:25px;
+            padding:30px;
+            margin-bottom:35px;
+            box-shadow:0 0 25px rgba(0,0,0,0.4);
+            transition:0.4s;
+        }
+        .result-card:hover{
+            transform:translateY(-8px);
+            box-shadow:0 0 35px rgba(250,204,21,0.15);
+        }
+        .job-title{
+            color:#facc15;
+            font-size:32px;
+            font-weight:bold;
+        }
+        .score-box{
+            color:#22c55e;
+            font-size:22px;
+            font-weight:bold;
+        }
+        .section-head{
+            margin-top:25px;
+            margin-bottom:12px;
+            color:#38bdf8;
+            font-size:22px;
+            font-weight:bold;
+        }
+        .badge-skill{
+            display:inline-block;
+            margin:5px;
+            padding:8px 14px;
+            border-radius:20px;
+            font-size:14px;
+        }
+        .match{ background:#16a34a; }
+        .miss{ background:#dc2626; }
+        .need{ background:#0ea5e9; color:black; }
+        ul li, ol li{
+            margin-bottom:8px;
+            color:#cbd5e1;
+        }
+        .progress{
+            height:28px;
+            border-radius:20px;
+            overflow:hidden;
+            background:#334155;
+        }
+        .footer-btn{
+            text-align:center;
+            padding:30px;
+        }
+        .footer-btn a{
+            text-decoration:none;
+            background:#facc15;
+            color:black;
+            padding:14px 28px;
+            border-radius:30px;
+            font-weight:bold;
+        }
+    </style>
 </head>
+<body>
 
-<body class="bg-dark text-white">
-<div class="container">
-  <h2 class="text-center mt-4 text-warning">🚀 Your Recommended Jobs</h2>
+```
+<h1 class="main-title">🚀 AI Career Recommendation Dashboard</h1>
+<p class="sub-title">Smart ML Prediction + Personalized Learning Roadmap + Skill Gap Analysis</p>
 
-  <div id="result" class="row mt-4"></div>
+<div class="container" id="result"></div>
 
-  <div class="text-center mt-4">
-    <a href="/upload" class="btn btn-warning">⬅ Go Back</a>
-  </div>
+<div class="footer-btn">
+    <a href="/upload">🔁 Analyze Again</a>
 </div>
+```
 
 <script>
 const result = JSON.parse(localStorage.getItem("result")) || [];
 const container = document.getElementById("result");
 
-console.log("ML RESULT:", result);
+if(result.length > 0){
+    container.innerHTML = result.map(r => `
+        <div class="result-card">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div class="job-title">🎯 ${r.job}</div>
+                <div class="score-box">ML Score: ${r.score}%</div>
+            </div>
 
-if (result.length > 0) {
-  container.innerHTML = result.map(r => `
-    <div class="col-md-4 mb-4">
-      <div class="card p-3 bg-dark text-white shadow h-100">
+            <p class="mt-3 text-info">${r.career_info?.description || "No description available"}</p>
 
-        <h5 class="text-warning">${r.job || "No Job"}</h5>
+            <div class="section-head">📊 Skill Match Percentage</div>
+            <div class="progress mb-3">
+                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width:${r.percent}%">
+                    ${r.percent}%
+                </div>
+            </div>
 
-        <p>Score: <b class="text-success">${r.score || "0%"}</b></p>
+            <div class="section-head">✅ Current Match vs Missing Skills</div>
+            <div>
+                ${(r.job_skills || []).map(skill =>
+                    (r.matched_skills || []).includes(skill)
+                    ? `<span class="badge-skill match">${skill}</span>`
+                    : `<span class="badge-skill miss">${skill}</span>`
+                ).join("")}
+            </div>
 
-        <p>Skills Match:</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-success" style="width:${r.percent || 0}%">
-            ${r.percent || 0}%
-          </div>
+            <div class="section-head">⚠ Skills You Need To Learn</div>
+            <div>
+                ${(r.missing || []).map(m => `<span class="badge-skill need">${m}</span>`).join("") || "None"}
+            </div>
+
+            <div class="section-head">📚 Recommended Courses</div>
+            <ul>
+                ${(r.career_info?.courses || []).map(c => `<li>${c}</li>`).join("")}
+            </ul>
+
+            <div class="section-head">🎥 Best Study Material</div>
+            <ul>
+                ${(r.career_info?.youtube || []).map(y => `<li>${y}</li>`).join("")}
+            </ul>
+
+            <div class="section-head">🧠 Core Skills To Master</div>
+            <div>
+                ${(r.career_info?.skills || []).map(s => `<span class="badge-skill need">${s}</span>`).join("")}
+            </div>
+
+            <div class="section-head">🛣 Personalized Roadmap</div>
+            <ol>
+                ${(r.career_info?.roadmap || []).map(step => `<li>${step}</li>`).join("")}
+            </ol>
         </div>
-
-        <p>Skills:</p>
-        ${
-          (r.job_skills || []).map(skill =>
-            (r.matched_skills || []).includes(skill)
-              ? `<span class="badge bg-success m-1">${skill}</span>`
-              : `<span class="badge bg-danger m-1">${skill}</span>`
-          ).join("")
-        }
-
-        <p class="mt-2">Missing Skills:</p>
-        <p class="text-info">${(r.missing || []).join(", ") || "None 🎉"}</p>
-
-      </div>
-    </div>
-  `).join("");
-} else {
-  container.innerHTML = `<h3 class="text-center text-danger mt-5">No jobs found 😔</h3>`;
+    `).join("");
+}else{
+    container.innerHTML = `<h2 class='text-center text-danger mt-5'>No jobs found 😔</h2>`;
 }
 </script>
 

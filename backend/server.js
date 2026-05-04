@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
 const bcrypt = require('bcrypt');
+const careerResources = require('../careerResources.json');
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -59,8 +60,22 @@ app.post('/predict', (req, res) => {
 
         try {
             const result = JSON.parse(output);
-            console.log(result); // debug
-            res.json({ result: result });
+
+            // attach career resources to every predicted job
+            const enhancedResult = result.map(item => ({
+                ...item,
+                career_info: careerResources[item.job] || {
+                    description: "No description available",
+                    courses: [],
+                    youtube: [],
+                    skills: [],
+                    roadmap: []
+                }
+            }));
+
+            console.log(enhancedResult);
+            res.json({ result: enhancedResult });
+
         } catch (err) {
             console.log("JSON ERROR:", err);
             console.log(output);

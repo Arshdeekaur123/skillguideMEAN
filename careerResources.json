@@ -1,0 +1,225 @@
+{
+  "Senior Software Engineer": {
+    "description": "Designs, develops, and maintains scalable software systems and enterprise applications.",
+    "courses": ["Advanced Data Structures & Algorithms", "System Design Masterclass", "Java/Python Advanced Programming"],
+    "youtube": ["Software Engineering Roadmap", "DSA Full Course", "System Design for Beginners"],
+    "skills": ["Java", "Python", "C++", "OOP", "System Design", "Databases", "Algorithms"],
+    "roadmap": ["Master one programming language", "Study DSA deeply", "Learn backend development", "Understand database systems", "Study system design", "Build scalable projects"]
+  },
+
+  "Machine Learning (ML) Engineer": {
+    "description": "Builds machine learning pipelines, trains predictive models, and deploys AI systems.",
+    "courses": ["Machine Learning by Andrew Ng", "TensorFlow Developer Certificate", "MLOps Fundamentals"],
+    "youtube": ["ML Full Roadmap", "TensorFlow Tutorial", "Scikit Learn Projects"],
+    "skills": ["Python", "Scikit Learn", "TensorFlow", "Deep Learning", "Feature Engineering", "Model Deployment"],
+    "roadmap": ["Learn Python", "Study statistics", "Learn ML algorithms", "Master TensorFlow/PyTorch", "Build projects", "Deploy ML apps"]
+  },
+
+  "Executive/ Senior Executive- Trade Marketing, Hygiene Products": {
+    "description": "Handles product marketing strategy, retail promotions, customer engagement, and market expansion.",
+    "courses": ["Digital Marketing Masterclass", "Brand Management", "Consumer Behavior"],
+    "youtube": ["Marketing Strategy Full Course", "Trade Marketing Basics", "Brand Promotion Guide"],
+    "skills": ["Marketing", "Branding", "Communication", "Retail Analysis", "Product Promotion"],
+    "roadmap": ["Learn marketing basics", "Study trade promotions", "Understand consumer psychology", "Practice sales analysis", "Master brand communication"]
+  },
+
+  "Business Development Executive": {
+    "description": "Drives company growth by acquiring clients, partnerships, and revenue opportunities.",
+    "courses": ["Business Development Fundamentals", "Sales Negotiation", "CRM Management"],
+    "youtube": ["Business Development Full Course", "Sales Mastery", "Client Acquisition Strategies"],
+    "skills": ["Sales", "Negotiation", "Communication", "Lead Generation", "CRM"],
+    "roadmap": ["Learn client communication", "Study sales funnels", "Understand B2B outreach", "Master CRM tools", "Practice negotiation"]
+  },
+
+  "Senior iOS Engineer": {
+    "description": "Builds and optimizes advanced mobile applications for Apple iOS ecosystem.",
+    "courses": ["iOS App Development with Swift", "Advanced Swift Programming", "UIKit & SwiftUI Masterclass"],
+    "youtube": ["iOS Development Full Course", "SwiftUI Tutorial", "App Store Deployment Guide"],
+    "skills": ["Swift", "SwiftUI", "UIKit", "Xcode", "API Integration", "App Deployment"],
+    "roadmap": ["Learn Swift basics", "Study iOS UI development", "Practice API integration", "Build apps", "Deploy to App Store"]
+  },
+
+  "AI Engineer": {
+    "description": "Builds intelligent systems using neural networks, NLP, computer vision, and generative AI.",
+    "courses": ["Deep Learning Specialization", "Generative AI Fundamentals", "AI for Everyone"],
+    "youtube": ["Artificial Intelligence Full Course", "Neural Networks Explained", "Generative AI Projects"],
+    "skills": ["Python", "Deep Learning", "NLP", "Computer Vision", "TensorFlow", "PyTorch"],
+    "roadmap": ["Learn Python & math", "Study ML basics", "Master deep learning", "Learn NLP/CV", "Build AI applications"]
+  },
+
+  "Mechanical Engineer": {
+    "description": "Designs, analyzes, and improves mechanical systems, machines, and industrial equipment.",
+    "courses": ["Mechanical Engineering Fundamentals", "Thermodynamics", "Machine Design"],
+    "youtube": ["Mechanical Engineering Full Course", "AutoCAD for Mechanical", "Thermal Engineering Basics"],
+    "skills": ["AutoCAD", "Thermodynamics", "Machine Design", "Manufacturing", "SolidWorks"],
+    "roadmap": ["Study mechanics", "Learn CAD tools", "Understand machine elements", "Practice design projects"]
+  },
+
+  "Mechanical Designer": {
+    "description": "Creates detailed machine and product designs using CAD tools.",
+    "courses": ["AutoCAD Masterclass", "SolidWorks Design", "Product Design Engineering"],
+    "youtube": ["Mechanical CAD Tutorial", "SolidWorks Full Guide", "Industrial Product Design"],
+    "skills": ["AutoCAD", "SolidWorks", "3D Modeling", "Technical Drawing"],
+    "roadmap": ["Learn CAD basics", "Practice 3D models", "Study industrial drawing", "Create machine blueprints"]
+  },
+
+  "Asst. Manager/ Manger (Administrative)": {
+    "description": "Manages office operations, documentation, scheduling, and team administration.",
+    "courses": ["Office Administration", "Business Communication", "Management Essentials"],
+    "youtube": ["Administrative Management Guide", "Office Coordination Skills", "Managerial Communication"],
+    "skills": ["Documentation", "Coordination", "MS Office", "Management", "Communication"],
+    "roadmap": ["Learn office workflow", "Master MS Office", "Practice communication", "Study management reporting"]
+  },
+
+  "Database Administrator (DBA)": {
+    "description": "Maintains, secures, and optimizes company databases and storage systems.",
+    "courses": ["SQL DBA Masterclass", "Oracle Database Administration", "Database Security"],
+    "youtube": ["DBA Full Course", "SQL Server Administration", "Database Backup & Recovery"],
+    "skills": ["SQL", "Oracle", "MySQL", "Backup", "Recovery", "Database Security"],
+    "roadmap": ["Learn SQL", "Study relational databases", "Practice backup/recovery", "Learn optimization", "Master security"]
+  },
+
+  "System Administrator (Operation & Maintenance of Server, Storage & Service Desk System)": {
+    "description": "Maintains servers, storage devices, user support systems, and enterprise IT infrastructure.",
+    "courses": ["Linux Administration", "Windows Server Management", "IT Infrastructure Basics"],
+    "youtube": ["System Admin Full Course", "Linux Server Setup", "IT Helpdesk Guide"],
+    "skills": ["Linux", "Windows Server", "Networking", "Server Maintenance", "Storage Management"],
+    "roadmap": ["Learn OS basics", "Study server setup", "Practice networking", "Understand storage", "Learn troubleshooting"]
+  },
+
+  "Project Coordinator (Civil)": {
+    "description": "Coordinates civil construction projects, reports, timelines, and site communication.",
+    "courses": ["Construction Project Management", "Civil Planning", "Site Coordination"],
+    "youtube": ["Civil Project Management", "Construction Planning Guide", "AutoCAD Civil Tutorial"],
+    "skills": ["Civil Planning", "AutoCAD", "Scheduling", "Reporting", "Site Coordination"],
+    "roadmap": ["Learn project basics", "Study civil workflows", "Master reporting", "Practice coordination"]
+  },
+
+  "Executive/ Sr. Executive -IT": {
+    "description": "Supports enterprise IT operations, systems handling, and technical issue resolution.",
+    "courses": ["IT Support Fundamentals", "Networking Basics", "Enterprise Systems"],
+    "youtube": ["IT Executive Roadmap", "Technical Support Full Course", "Enterprise IT Basics"],
+    "skills": ["Networking", "Hardware", "Software Support", "Communication", "Troubleshooting"],
+    "roadmap": ["Learn IT support", "Study networking", "Practice troubleshooting", "Understand office systems"]
+  },
+
+  "Network Support Engineer": {
+    "description": "Maintains routers, switches, internet connectivity, and network troubleshooting.",
+    "courses": ["CCNA Complete Course", "Network Security", "Routing & Switching"],
+    "youtube": ["Networking Full Course", "Cisco Packet Tracer Tutorial", "CCNA Labs"],
+    "skills": ["TCP/IP", "Routers", "Switches", "Firewall", "LAN/WAN"],
+    "roadmap": ["Learn networking basics", "Study Cisco devices", "Practice packet tracer", "Understand security"]
+  },
+
+  "Intern (Generative AI Engineering - 2D/3D Image Generation)": {
+    "description": "Works on generative AI models for creating images, graphics, and synthetic media.",
+    "courses": ["Generative AI with Diffusion Models", "Computer Vision", "Prompt Engineering"],
+    "youtube": ["Stable Diffusion Full Course", "Generative AI Projects", "Computer Vision Basics"],
+    "skills": ["Python", "Diffusion Models", "GANs", "OpenCV", "Prompt Engineering"],
+    "roadmap": ["Learn Python", "Study CV basics", "Understand GANs", "Learn diffusion models", "Build image generators"]
+  },
+
+  "Executive - VAT": {
+    "description": "Handles taxation, VAT compliance, financial records, and audit documentation.",
+    "courses": ["Taxation Basics", "VAT Compliance", "Accounting Essentials"],
+    "youtube": ["VAT Filing Guide", "Accounting Full Course", "GST & VAT Basics"],
+    "skills": ["Accounting", "Tax Filing", "Excel", "Finance Reporting"],
+    "roadmap": ["Learn accounting basics", "Study VAT laws", "Practice filing", "Master financial reporting"]
+  },
+
+  "Sr.Officer / Executive - Internal Audit": {
+    "description": "Performs financial audits, compliance checks, and internal control reviews.",
+    "courses": ["Internal Audit Fundamentals", "Risk Management", "Financial Compliance"],
+    "youtube": ["Audit Process Full Course", "Internal Control Guide", "Finance Compliance"],
+    "skills": ["Auditing", "Risk Analysis", "Compliance", "Documentation"],
+    "roadmap": ["Study auditing", "Learn risk analysis", "Practice compliance review", "Understand reports"]
+  },
+
+  "Management Trainee - Mechanical": {
+    "description": "Learns industrial mechanical operations with managerial supervision responsibilities.",
+    "courses": ["Mechanical Operations", "Production Management", "Industrial Safety"],
+    "youtube": ["Mechanical Plant Training", "Industrial Production Guide", "Factory Workflow"],
+    "skills": ["Mechanical Basics", "Plant Operations", "Management", "Safety"],
+    "roadmap": ["Learn plant workflow", "Study machine maintenance", "Understand supervision"]
+  },
+
+  "HR Officer": {
+    "description": "Manages recruitment, employee relations, payroll coordination, and HR documentation.",
+    "courses": ["Human Resource Management", "Recruitment Mastery", "Payroll Administration"],
+    "youtube": ["HR Full Course", "Recruitment Process Guide", "Employee Management"],
+    "skills": ["Recruitment", "Communication", "Payroll", "Employee Handling"],
+    "roadmap": ["Study HR basics", "Learn hiring process", "Understand payroll", "Practice employee communication"]
+  },
+
+  "DevOps Engineer": {
+    "description": "Automates deployment, CI/CD pipelines, containers, and cloud infrastructure.",
+    "courses": ["Docker & Kubernetes", "Jenkins CI/CD", "AWS DevOps"],
+    "youtube": ["DevOps Full Course", "Docker Kubernetes Crash Course", "Jenkins Tutorial"],
+    "skills": ["Linux", "Docker", "Kubernetes", "Jenkins", "AWS", "Git"],
+    "roadmap": ["Learn Linux", "Master Git", "Study Docker", "Learn Jenkins", "Understand Kubernetes", "Deploy cloud apps"]
+  },
+
+  "Data Engineer": {
+    "description": "Builds data pipelines, warehouses, and large-scale ETL systems for analytics.",
+    "courses": ["Data Engineering on Google Cloud", "Apache Spark", "SQL for Data Engineers"],
+    "youtube": ["Data Engineering Roadmap", "ETL Full Tutorial", "Apache Spark Course"],
+    "skills": ["SQL", "Python", "ETL", "Spark", "Data Warehousing", "Big Data"],
+    "roadmap": ["Learn SQL", "Study ETL concepts", "Master Python", "Learn Spark", "Build data pipelines"]
+  },
+
+  "Head of Internal Control & Compliance (ICC) - SEVP/DMD": {
+    "description": "Leads enterprise governance, compliance auditing, risk mitigation, and internal controls.",
+    "courses": ["Corporate Compliance", "Risk Governance", "Enterprise Audit Leadership"],
+    "youtube": ["Compliance Management", "Risk Governance Full Guide", "Corporate Audit"],
+    "skills": ["Compliance", "Governance", "Audit", "Risk Control", "Leadership"],
+    "roadmap": ["Study enterprise compliance", "Learn risk governance", "Understand audit systems"]
+  },
+
+  "Full Stack Developer (Python,React js)": {
+    "description": "Builds complete frontend-backend web applications using Python APIs and React interfaces.",
+    "courses": ["MERN/Full Stack Bootcamp", "React JS Masterclass", "Python Flask/Django APIs"],
+    "youtube": ["Full Stack Development Full Course", "React JS Tutorial", "Python Backend APIs"],
+    "skills": ["HTML", "CSS", "JavaScript", "React", "Python", "Flask/Django", "MongoDB"],
+    "roadmap": ["Learn frontend basics", "Master JavaScript", "Learn React", "Study Python backend", "Connect databases", "Deploy app"]
+  },
+
+  "Civil Engineer": {
+    "description": "Designs and supervises buildings, roads, infrastructure, and construction systems.",
+    "courses": ["Civil Engineering Basics", "Structural Analysis", "Construction Management"],
+    "youtube": ["Civil Engineering Full Course", "AutoCAD Civil", "Construction Site Guide"],
+    "skills": ["AutoCAD", "Surveying", "Construction", "Structural Design"],
+    "roadmap": ["Study civil basics", "Learn structural design", "Practice AutoCAD", "Understand site supervision"]
+  },
+
+  "Data Science Engineer": {
+    "description": "Combines analytics, machine learning, and engineering to build predictive data systems.",
+    "courses": ["IBM Data Science", "Machine Learning Specialization", "Python for Analytics"],
+    "youtube": ["Data Science Full Course", "Pandas NumPy Guide", "ML Projects"],
+    "skills": ["Python", "Pandas", "NumPy", "Machine Learning", "SQL", "Visualization"],
+    "roadmap": ["Learn Python", "Master data analysis", "Study ML", "Build data projects", "Learn SQL dashboards"]
+  },
+
+  "Manager- Human Resource Management (HRM)": {
+    "description": "Leads organizational hiring, employee welfare, compliance, and talent development.",
+    "courses": ["Strategic HRM", "Leadership in HR", "Talent Acquisition"],
+    "youtube": ["HRM Full Course", "Strategic Recruitment", "Employee Retention"],
+    "skills": ["Leadership", "Recruitment", "Policy", "Payroll", "Communication"],
+    "roadmap": ["Learn HR policies", "Master recruitment", "Study employee retention", "Develop leadership"]
+  },
+
+  "Marketing Officer": {
+    "description": "Promotes company services/products through campaigns, branding, and customer engagement.",
+    "courses": ["Digital Marketing", "SEO & SEM", "Brand Strategy"],
+    "youtube": ["Marketing Full Course", "Social Media Marketing", "SEO Tutorial"],
+    "skills": ["Marketing", "Branding", "SEO", "Social Media", "Communication"],
+    "roadmap": ["Study digital marketing", "Learn social media ads", "Understand SEO", "Practice campaign building"]
+  },
+
+  "Site Engineer": {
+    "description": "Supervises construction site activities, labor management, and technical implementation.",
+    "courses": ["Construction Site Engineering", "AutoCAD", "Site Planning"],
+    "youtube": ["Site Engineer Full Guide", "Construction Workflow", "Civil Site Supervision"],
+    "skills": ["Construction", "AutoCAD", "Planning", "Site Supervision"],
+    "roadmap": ["Learn construction basics", "Study drawings", "Practice site management", "Understand quality control"]
+  }
+}
